@@ -25,12 +25,14 @@ set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
 set signcolumn=yes
 set background=dark
+set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jcherven/jummidark.vim'
 Plug 'KarimElghamry/vim-auto-comment'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 syntax enable

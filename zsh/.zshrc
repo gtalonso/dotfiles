@@ -94,6 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+eval `keychain --agents ssh --eval id_rsa_rappi`
+
 # Example aliases
 alias vi='nvim'
 alias zshconfig="vi ~/.zshrc"
@@ -102,3 +104,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
 alias cls='clear'
+
+alias rappi='cd ~/personal/rappi'
+alias rappirepos='cd ~/personal/rappi/repos'
+
+export EDITOR=nvim
