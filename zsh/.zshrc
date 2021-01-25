@@ -104,8 +104,3 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
 alias cls='clear'
-
-alias rappi='cd ~/personal/rappi'
-alias rappirepos='cd ~/personal/rappi/repos'
-
-export EDITOR=nvim
