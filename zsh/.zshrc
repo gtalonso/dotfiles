@@ -102,7 +102,3 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
 alias cls='clear'
-alias xmonadconf="vi ~/.xmonad/xmonad.hs"
-alias xmobarconf="vi ~/.xmobar/xmobarrc"
-
-keychain $HOME/.ssh/id_rsa_rappi
