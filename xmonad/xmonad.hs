@@ -22,7 +22,7 @@ myBorderColor = "#59ecc4"
 
 myFocusedBorderColor = "#9c4dd2"
 
-myWorkspaces = ["1:Com", "2:Code", "3:Personal", "4", "5", "6"]
+myWorkspaces = ["1:Comm", "2:Code", "3:Terms", "4", "5", "6"]
 
 myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     , ((myModMask .|. shiftMask, xK_q), kill)
@@ -41,9 +41,9 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     ]
 
 myManageHook = composeAll [
-    className =? "Google-chrome" --> doShift "1:Com"
+    className =? "Google-chrome" --> doShift "1:Comm"
     , className =? "Gnome-control-center" --> doFloat
-    , className =? "Slack" --> doShift "1:Com"
+    , className =? "Slack" --> doShift "1:Comm"
     ]
 
 myStartupHook = do
