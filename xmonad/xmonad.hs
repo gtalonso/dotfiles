@@ -7,6 +7,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Hooks.UrgencyHook
 import XMonad.Util.NamedWindows
 import XMonad.Util.Run
+import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
 
 import System.IO
@@ -29,7 +30,7 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     , ((mod1Mask, xK_F4), spawn "shutdown -P now")
     , ((mod1Mask .|. shiftMask, xK_F4), io (exitWith ExitSuccess))
     , ((myModMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
-    , ((myModMask .|. shiftMask, xK_s), spawn "sleep 0.2; scrot -s")
+    , ((myModMask .|. shiftMask, xK_s), spawn "sleep 0.2; scrot -s -e 'mv $f ~/Pictures/'")
     , ((0, xK_Print), spawn "scrot")
     , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2-")
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2+")
@@ -39,7 +40,13 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
 myManageHook = composeAll [
     className =? "Google-chrome" --> doShift "1:Com"
     , className =? "Gnome-control-center" --> doFloat
+    , className =? "Slack" --> doShift "1:Com"
     ]
+
+myStartupHook = do
+    spawnOnce "nitrogen --restore &"
+    spawnOnce "google-chrome"
+    spawnOnce "slack"
 
 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
@@ -66,4 +73,5 @@ main = do
         , workspaces = myWorkspaces
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
+        , startupHook = myStartupHook
         } `additionalKeys` myAdditionalKeys
