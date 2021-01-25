@@ -75,7 +75,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -94,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-eval `keychain --agents ssh --eval id_rsa_rappi id_rsa`
+eval `keychain --agents ssh --eval id_rsa_rappi id_rsa id_rsa_personal`
 
 # Example aliases
 alias vi='nvim'
@@ -104,3 +105,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
 alias cls='clear'
+alias xmonadconf="vi ~/.xmonad/xmonad.hs"
+alias xmobarconf="vi ~/.xmobar/xmobarrc"
+alias bashconf="vi ~/.bashrc"
+

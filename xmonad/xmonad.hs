@@ -30,8 +30,11 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     , ((mod1Mask, xK_F4), spawn "shutdown -P now")
     , ((mod1Mask .|. shiftMask, xK_F4), io (exitWith ExitSuccess))
     , ((myModMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
+    , ((myModMask, xK_e), spawn "nemo")
+    -- screenshots shortcuts
     , ((myModMask .|. shiftMask, xK_s), spawn "sleep 0.2; scrot -s -e 'mv $f ~/Pictures/'")
     , ((0, xK_Print), spawn "scrot")
+    -- Audio shortcuts
     , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2-")
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2+")
     , ((0, xF86XK_AudioMute          ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
