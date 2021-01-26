@@ -77,6 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH=$HOME/work
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOPRIVATE="bitbucket.org/rappinc"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -99,7 +100,7 @@ eval `keychain --agents ssh --eval id_rsa_rappi id_rsa id_rsa_personal`
 
 # Example aliases
 alias vi='nvim'
-alias zshconfig="vi ~/.zshrc"
+alias zshconf="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -108,4 +109,5 @@ alias cls='clear'
 alias xmonadconf="vi ~/.xmonad/xmonad.hs"
 alias xmobarconf="vi ~/.xmobar/xmobarrc"
 alias bashconf="vi ~/.bashrc"
-
+alias rappirepos="cd ~/Documents/rappi/repositories"
+alias dotrepos="cd ~/Documents/repositories/dotfiles"
