@@ -49,7 +49,6 @@ myManageHook = composeAll [
 myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "google-chrome"
-    spawnOnce "slack"
 
 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
