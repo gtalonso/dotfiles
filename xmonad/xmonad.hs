@@ -38,6 +38,8 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2-")
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2+")
     , ((0, xF86XK_AudioMute          ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ((myModMask .|. shiftMask, xK_o), spawn ".screenlayout/external.sh; sleep 1; nitrogen --restore")
+    , ((myModMask .|. shiftMask, xK_p), spawn ".screenlayout/internal.sh; sleep 1; nitrogen --restore")
     ]
 
 myManageHook = composeAll [
@@ -49,7 +51,6 @@ myManageHook = composeAll [
 myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "google-chrome"
-
 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
 

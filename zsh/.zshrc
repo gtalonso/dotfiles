@@ -96,7 +96,6 @@ export GOPRIVATE="bitbucket.org/rappinc"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-eval `keychain --agents ssh --eval id_rsa_rappi id_rsa id_rsa_personal`
 
 # Example aliases
 alias vi='nvim'
@@ -111,3 +110,5 @@ alias xmobarconf="vi ~/.xmobar/xmobarrc"
 alias bashconf="vi ~/.bashrc"
 alias rappirepos="cd ~/Documents/rappi/repositories"
 alias dotrepos="cd ~/Documents/repositories/dotfiles"
+
+eval `keychain --agents ssh --eval id_rsa_rappi id_rsa id_rsa_personal`
