@@ -9,6 +9,7 @@ import XMonad.Util.NamedWindows
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 
 import System.IO
 import System.Exit
@@ -49,6 +50,7 @@ myManageHook = composeAll [
     ]
 
 myStartupHook = do
+    setWMName "LG3D"
     spawnOnce "nitrogen --restore &"
     spawnOnce "google-chrome"
 

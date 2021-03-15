@@ -78,6 +78,9 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/work
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GOPRIVATE="bitbucket.org/rappinc"
+
+export USERNAME_REPOSITORY=g-torres
+export PASSWORD_REPOSITORY=dseRc3xptNUhYKkegDjD
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -110,5 +113,7 @@ alias xmobarconf="vi ~/.xmobar/xmobarrc"
 alias bashconf="vi ~/.bashrc"
 alias rappirepos="cd ~/Documents/rappi/repositories"
 alias dotrepos="cd ~/Documents/repositories/dotfiles"
+alias python="python3"
+alias pip="pip3"
 
 eval `keychain --agents ssh --eval id_rsa_rappi id_rsa id_rsa_personal`
