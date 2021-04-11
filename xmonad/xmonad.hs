@@ -45,6 +45,9 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
 
 myManageHook = composeAll [
     className =? "Google-chrome" --> doShift "1:Comm"
+    , className =? "Brave-browser" --> doShift "1:Comm"
+    , className =? "Code" --> doShift "2:Code"
+    , className =? "jetbrains-idea-ce" --> doShift "2:Code"
     , className =? "Gnome-control-center" --> doFloat
     , className =? "Slack" --> doShift "1:Comm"
     ]
@@ -52,7 +55,7 @@ myManageHook = composeAll [
 myStartupHook = do
     setWMName "LG3D"
     spawnOnce "nitrogen --restore &"
-    spawnOnce "google-chrome"
+    spawnOnce "brave-browser"
 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
 
