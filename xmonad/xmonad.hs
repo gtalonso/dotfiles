@@ -50,6 +50,9 @@ myManageHook = composeAll [
     , className =? "jetbrains-idea-ce" --> doShift "2:Code"
     , className =? "Gnome-control-center" --> doFloat
     , className =? "Slack" --> doShift "1:Comm"
+    , className =? "Forticlient" --> doShift "6"
+    , className =? "Insomnia" --> doShift "4"
+    , className =? "DBeaver" --> doShift "4"
     ]
 
 myStartupHook = do
