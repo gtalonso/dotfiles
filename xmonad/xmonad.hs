@@ -10,9 +10,11 @@ import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.SetWMName
+import XMonad.Actions.PhysicalScreens
 
 import System.IO
 import System.Exit
+import Data.Default
 import Graphics.X11.ExtraTypes.XF86
 
 myTerminal = "alacritty"
@@ -36,12 +38,16 @@ myAdditionalKeys = [ (( myModMask, xK_Return), spawn myTerminal)
     , ((myModMask .|. shiftMask, xK_s), spawn "sleep 0.2; scrot -s -e 'mv $f ~/Pictures/'")
     , ((0, xK_Print), spawn "scrot")
     -- Audio shortcuts
-    , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2-")
-    , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2+")
+    , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer -c 1 set Master 2-")
+    , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer -c 1 set Master 2+")
     , ((0, xF86XK_AudioMute          ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((myModMask .|. shiftMask, xK_o), spawn ".screenlayout/external.sh; sleep 1; nitrogen --restore")
     , ((myModMask .|. shiftMask, xK_p), spawn ".screenlayout/internal.sh; sleep 1; nitrogen --restore")
     ]
+    ++
+    [((mod1Mask .|. mask, key), f sc)
+    | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+    , (f, mask) <- [(viewScreen def, 0), (sendToScreen def, shiftMask)]]
 
 myManageHook = composeAll [
     className =? "Google-chrome" --> doShift "1:Comm"
